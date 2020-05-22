@@ -1,0 +1,33 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.SwitchClass {
+  margin: 0 10px;
+}
+
+.SwitchClass.Dark,
+.SwitchClass.Light::before {
+  background-color: #eceff4;
+  border-color: #2e3440;
+}
+
+.SwitchClass.Light,
+.SwitchClass.Dark::before {
+  background-color: #2e3440;
+  border-color: #eceff4;
+}
+
+.Icon {
+  width: 15px;
+  height: 15px;
+}
+
+.Icon.Dark path {
+  fill: #eceff4;
+}
+
+.Icon.Ligh patht {
+  fill: #2e3440;
+}

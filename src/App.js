@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-function App() {
+import Nav from './Nav'
+
+export const Context = createContext()
+
+const App = () => {
+  const [darkTheme, setDarkTheme] = useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Context.Provider
+        value={{
+          darkTheme,
+          setDarkTheme: (t) => setDarkTheme(t),
+        }}
+      >
+        <Router>
+          <Nav />
+        </Router>
+      </Context.Provider>
+    </>
+  )
 }
 
-export default App;
+// Design by Brittany Chiang: https://github.com/bchiang7/v3
+
+export default App
