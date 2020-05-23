@@ -15,6 +15,7 @@ import About from './About'
 import Skills from './Skills'
 import Experience from './Experience'
 import Projects from './Projects'
+// import PersonalProjects from './PersonalProjects'
 
 const Landing = () => {
   const { darkTheme } = useContext(Context)
@@ -27,6 +28,7 @@ const Landing = () => {
         <Skills />
         <Experience />
         <Projects />
+        {/* <PersonalProjects /> */}
       </div>
       <div className={Footer}>
         <p>Maxime Farrugia - 2020</p>

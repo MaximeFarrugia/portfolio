@@ -17,6 +17,7 @@ import {
 import classNames from '../../../Common/Helpers/classNames'
 import { Context } from '../../../App'
 import experiences from './experiences'
+import LinkFadingArrow from '../../../Common/Components/LinkFadingArrow'
 
 const Experience = ({ className }) => {
   const { darkTheme } = useContext(Context)
@@ -31,13 +32,9 @@ const Experience = ({ className }) => {
         {experiences.map((exp) => (
           <div className={ExperienceClass} key={exp.company}>
             <div>
-              <a
-                href={exp.link || '#'}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <LinkFadingArrow link={exp.link || '#'}>
                 {exp.company}
-              </a>
+              </LinkFadingArrow>
               <p>
                 {t(exp.start)}
                 {exp.yearStart !== exp.yearEnd && ` ${exp.yearStart} `}

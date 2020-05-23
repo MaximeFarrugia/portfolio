@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-const experiences = [
+const projects = [
   {
     project: 'Transpare',
     desc: 'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.',
@@ -8,4 +8,4 @@ const experiences = [
   },
 ]
 
-export default experiences
+export default projects

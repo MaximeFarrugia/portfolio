@@ -1,0 +1,28 @@
+.Wrapper {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.Dark .Arrow {
+  color: #80C0D0;
+}
+
+.Light .Arrow {
+  color: #5E81AC;
+}
+
+.Wrapper > .Arrow {
+  opacity: 0;
+  margin-left: 20px;
+  transition: opacity .15s ease-in-out, margin-left .2s ease-in-out .15s;
+}
+
+.Wrapper:hover > .Arrow {
+  opacity: 1;
+  margin-left: 40px;
+}

@@ -1,0 +1,17 @@
+.Wrapper {
+  font-size: 14px;
+  border: 1px solid;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 2px 10px;
+}
+
+.Wrapper.Dark {
+  color: #80C0D0;
+  border-color: #80C0D0;
+}
+
+.Wrapper.Light {
+  color: #5E81AC;
+  border-color: #5E81AC;
+}

@@ -43,6 +43,7 @@ i18n
           'Projets réalisés': 'Projets réalisés',
           'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.':
             'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.',
+          'Projets personnels': 'Projets personnels',
         },
       },
       en: {
@@ -80,6 +81,7 @@ i18n
           'Projets réalisés': 'Featured projects',
           'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.':
             'Platform for putting importers / exporters and forwarders in touch with each other.',
+          'Projets personnels': 'Personal projects',
         },
       },
       // se: {

@@ -8,32 +8,40 @@ import {
   Light,
   Left,
   Right,
-  ProjectClass,
-} from './Projects.module.css'
+  PersonalProjectsClass,
+  Description,
+  Tags,
+  TagClass,
+} from './PersonalProjects.module.css'
 
 import classNames from '../../../Common/Helpers/classNames'
 import { Context } from '../../../App'
 import projects from './projects'
 import LinkFadingArrow from '../../../Common/Components/LinkFadingArrow'
+import Tag from '../../../Common/Components/Tag'
 
-const Projects = ({ className }) => {
+const PersonalProjects = ({ className }) => {
   const { darkTheme } = useContext(Context)
   const { t } = useTranslation()
 
   return (
     <div className={classNames([className, Wrapper, darkTheme ? Dark : Light])}>
       <div className={Left}>
-        <p>{t('Projets réalisés')}</p>
+        <p>{t('Projets personnels')}</p>
       </div>
       <div className={Right}>
         {projects.map((project) => (
-          <div className={ProjectClass} key={project.project}>
-            <img src={project.image} alt={project.name} />
-            <div>
-              <LinkFadingArrow link={project.link || '#'}>
-                {project.project}
-              </LinkFadingArrow>
+          <div className={PersonalProjectsClass} key={project.project}>
+            <LinkFadingArrow link={project.link || '#'}>
+              {project.project}
+            </LinkFadingArrow>
+            <div className={Description}>
               <p>{t(project.desc)}</p>
+            </div>
+            <div className={Tags}>
+              {project.tags.map((tag) => (
+                <Tag key={tag} className={TagClass} name={tag} />
+              ))}
             </div>
           </div>
         ))}
@@ -42,12 +50,12 @@ const Projects = ({ className }) => {
   )
 }
 
-Projects.propTypes = {
+PersonalProjects.propTypes = {
   className: string,
 }
 
-Projects.defaultProps = {
+PersonalProjects.defaultProps = {
   className: '',
 }
 
-export default Projects
+export default PersonalProjects
