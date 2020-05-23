@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
+import { useInView } from 'react-intersection-observer'
 
 import {
   Wrapper,
+  Visible,
   Dark,
   Light,
   Left,
@@ -16,9 +18,18 @@ import { Context } from '../../../App'
 const Skills = ({ className }) => {
   const { darkTheme } = useContext(Context)
   const { t } = useTranslation()
+  const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
-    <div className={classNames([className, Wrapper, darkTheme ? Dark : Light])}>
+    <div
+      ref={ref}
+      className={classNames([
+        className,
+        Wrapper,
+        darkTheme ? Dark : Light,
+        inView && Visible,
+      ])}
+    >
       <div className={Left}>
         <p>{t('Compétences')}</p>
       </div>
