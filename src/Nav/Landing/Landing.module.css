@@ -39,3 +39,17 @@
 .Light .Footer > p {
   color: #2e3440;
 }
+
+.GotoTop {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: .2s ease-in-out;
+}
+
+.GotoTop:hover {
+  bottom: 25px;
+}
