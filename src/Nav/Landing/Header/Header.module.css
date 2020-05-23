@@ -15,10 +15,14 @@
   color: #2e3440;
 }
 
-.ThemeSwitchClass {
+.Selectors {
   position: absolute;
   top: 60px;
   right: 60px;
+}
+
+.LangSelectClass {
+  margin-right: 20px;
 }
 
 .Wrapper > div {
@@ -106,6 +110,11 @@
 @media (max-width: 500px) {
   .Wrapper {
     padding: 200px 50px;
+  }
+
+  .Selectors {
+    top: 30px;
+    right: 30px;
   }
 }
 

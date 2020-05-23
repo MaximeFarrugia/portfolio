@@ -89,7 +89,7 @@ i18n
       //     'Bonjour !': 'Hallå !',
       //     'Je suis<strong> Maxime Farrugia</strong>, développeur web et étudiant en informatique.':
       //       'Jag är<strong> Maxime Farrugia</strong>, webbutvecklaren och datavetenckap.',
-      //     'Me contacter': 'Om mig',
+      //     'Me contacter': 'Kontakta mig',
       //     'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.':
       //       'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.',
       //   },

@@ -4,14 +4,17 @@ import { useTranslation, Trans } from 'react-i18next'
 
 import {
   Wrapper,
-  ThemeSwitchClass,
   Dark,
   Light,
+  Selectors,
+  LangSelectClass,
+  ThemeSwitchClass,
   WaveClass,
   Contact,
   Underlined,
 } from './Header.module.css'
 
+import LangSelect from '../../../Common/Components/LangSelect'
 import ThemeSwitch from '../../../Common/Components/ThemeSwitch'
 import classNames from '../../../Common/Helpers/classNames'
 import { ReactComponent as Wave } from './wave.svg'
@@ -24,7 +27,10 @@ const Header = ({ className }) => {
 
   return (
     <div className={classNames([className, Wrapper, darkTheme ? Dark : Light])}>
-      <ThemeSwitch className={ThemeSwitchClass} />
+      <div className={Selectors}>
+        <LangSelect className={LangSelectClass} />
+        <ThemeSwitch className={ThemeSwitchClass} />
+      </div>
       <div>
         <p>{t('Bonjour !')}</p>
         <Wave className={WaveClass} />
