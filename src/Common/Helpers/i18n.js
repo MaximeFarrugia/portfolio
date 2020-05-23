@@ -96,7 +96,7 @@ i18n
       // },
     },
     fallbackLng: 'en',
-    debug: true,
+    debug: false,
     ns: ['translations'],
     defaultNS: 'translations',
     keySeparator: false,
