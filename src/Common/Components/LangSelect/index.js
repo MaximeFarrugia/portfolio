@@ -25,6 +25,7 @@ const LangSelect = ({ className }) => {
   const [dropdown, setDropdown] = useState(false)
   const { darkTheme } = useContext(Context)
   const { i18n } = useTranslation()
+  const currentLang = langs.find((lang) => lang.code === i18n.language)
 
   return (
     <div
@@ -35,12 +36,12 @@ const LangSelect = ({ className }) => {
       <span
         className={classNames([
           `flag-icon flag-icon-${
-            langs.find((lang) => lang.code === i18n.language).flag
+            (currentLang && currentLang.flag) || 'gb'
           }`,
           Flag,
         ])}
       />
-      {langs.find((lang) => lang.code === i18n.language).lang}
+      {(currentLang && currentLang.lang) || 'English'}
       <Icon className={Arrow}>keyboard_arrow_down</Icon>
       {dropdown && (
         <div className={Dropdown}>
