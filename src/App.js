@@ -1,29 +1,45 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { withTranslation } from 'react-i18next'
+import * as Sentry from '@sentry/browser'
 
 import Nav from './Nav'
 
 export const Context = createContext()
 
-const App = () => {
-  const [darkTheme, setDarkTheme] = useState(true)
+class App extends React.Component {
+  state = {
+    darkTheme: true,
+  }
 
-  return (
-    <>
-      <Context.Provider
-        value={{
-          darkTheme,
-          setDarkTheme: (t) => setDarkTheme(t),
-        }}
-      >
-        <Router>
-          <Nav />
-        </Router>
-      </Context.Provider>
-    </>
-  )
+  componentDidCatch(error, errorInfo) {
+    const { i18n } = this.props
+
+    Sentry.withScope((scope) => {
+        scope.setTag('locale', i18n.language)
+        scope.setExtras(errorInfo)
+        Sentry.captureException(error)
+    })
+  }
+
+  render() {
+    const { darkTheme } = this.state
+
+    return (
+      <>
+        <Context.Provider
+          value={{
+            darkTheme,
+            setDarkTheme: (t) => this.setState({ darkTheme: t }),
+          }}
+        >
+          <Router>
+            <Nav />
+          </Router>
+        </Context.Provider>
+      </>
+    )
+  }
 }
 
-// Design by Brittany Chiang: https://github.com/bchiang7/v3
-
-export default App
+export default withTranslation()(App)
