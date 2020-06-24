@@ -16,16 +16,18 @@ import classNames from '../../Helpers/classNames'
 import { Context } from '../../../App'
 
 const langs = [
-  { lang: 'Francais', code: 'fr', flag: 'fr' },
-  { lang: 'English', code: 'en', flag: 'gb' },
-  // { lang: 'Svenska', code: 'se', flag: 'se' },
+  { lang: 'Francais', code: ['fr'], flag: 'fr' },
+  { lang: 'English', code: ['en', 'en-US'], flag: 'gb' },
+  // { lang: 'Svenska', code: ['se'], flag: 'se' },
 ]
 
 const LangSelect = ({ className }) => {
   const [dropdown, setDropdown] = useState(false)
   const { darkTheme } = useContext(Context)
   const { i18n } = useTranslation()
-  const currentLang = langs.find((lang) => lang.code === i18n.language)
+  const currentLang = langs.find((lang) =>
+    lang.code.some((l) => i18n.language.split(',').includes(l)),
+  )
 
   return (
     <div
@@ -35,20 +37,18 @@ const LangSelect = ({ className }) => {
     >
       <span
         className={classNames([
-          `flag-icon flag-icon-${
-            (currentLang && currentLang.flag) || 'gb'
-          }`,
+          `flag-icon flag-icon-${currentLang.flag}`,
           Flag,
         ])}
       />
-      {(currentLang && currentLang.lang) || 'English'}
+      {currentLang.lang}
       <Icon className={Arrow}>keyboard_arrow_down</Icon>
       {dropdown && (
         <div className={Dropdown}>
           {langs.map((lang) => (
             <div
               key={lang.code}
-              onClick={() => i18n.changeLanguage(lang.code)}
+              onClick={() => i18n.changeLanguage(lang.code[0])}
               role="presentation"
             >
               <span
