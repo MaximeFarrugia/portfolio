@@ -16,9 +16,9 @@ import classNames from '../../Helpers/classNames'
 import { Context } from '../../../App'
 
 const langs = [
-  { lang: 'Francais', code: ['fr'], flag: 'fr' },
   { lang: 'English', code: ['en', 'en-US'], flag: 'gb' },
-  // { lang: 'Svenska', code: ['se'], flag: 'se' },
+  { lang: 'Francais', code: ['fr'], flag: 'fr' },
+  // { lang: 'Svenska', code: ['sv'], flag: 'se' },
 ]
 
 const LangSelect = ({ className }) => {
@@ -27,7 +27,7 @@ const LangSelect = ({ className }) => {
   const { i18n } = useTranslation()
   const currentLang = langs.find((lang) =>
     lang.code.some((l) => i18n.language.split(',').includes(l)),
-  )
+  ) || langs[0]
 
   return (
     <div
