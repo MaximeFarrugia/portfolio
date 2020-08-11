@@ -1,68 +1,53 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-import Icon from '@material-ui/core/Icon'
 
-import {
-  Wrapper,
-  Dark,
-  Light,
-  Arrow,
-  Dropdown,
-  Flag,
-} from './LangSelect.module.css'
+import { Flag } from './LangSelect.module.css'
 
 import classNames from '../../Helpers/classNames'
-import { Context } from '../../../App'
+import Select from '../Select'
 
 const langs = [
-  { lang: 'English', code: ['en', 'en-US'], flag: 'gb' },
-  { lang: 'Francais', code: ['fr'], flag: 'fr' },
-  // { lang: 'Svenska', code: ['sv'], flag: 'se' },
+  { lang: 'English', codes: ['en', 'en-US'], flag: 'gb' },
+  { lang: 'Francais', codes: ['fr'], flag: 'fr' },
+  // { lang: 'Svenska', codes: ['sv'], flag: 'se' },
 ]
 
 const LangSelect = ({ className }) => {
-  const [dropdown, setDropdown] = useState(false)
-  const { darkTheme } = useContext(Context)
   const { i18n } = useTranslation()
   const currentLang = langs.find((lang) =>
-    lang.code.some((l) => i18n.language.split(',').includes(l)),
+    lang.codes.some((l) => i18n.language.split(',').includes(l)),
   ) || langs[0]
 
   return (
-    <div
-      className={classNames([className, Wrapper, darkTheme ? Dark : Light])}
-      onClick={() => setDropdown(!dropdown)}
-      role="presentation"
-    >
-      <span
-        className={classNames([
-          `flag-icon flag-icon-${currentLang.flag}`,
-          Flag,
-        ])}
-      />
-      {currentLang.lang}
-      <Icon className={Arrow}>keyboard_arrow_down</Icon>
-      {dropdown && (
-        <div className={Dropdown}>
-          {langs.map((lang) => (
-            <div
-              key={lang.code}
-              onClick={() => i18n.changeLanguage(lang.code[0])}
-              role="presentation"
-            >
-              <span
-                className={classNames([
-                  `flag-icon flag-icon-${lang.flag}`,
-                  Flag,
-                ])}
-              />
-              {lang.lang}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+    <Select
+      className={classNames([className])}
+      value={{
+        label: currentLang.lang,
+        value: currentLang.codes[0],
+        customElement: (
+          <span
+            className={classNames([
+              `flag-icon flag-icon-${currentLang.flag}`,
+              Flag,
+            ])}
+          />
+        ),
+      }}
+      options={langs.map(lang => ({
+        label: lang.lang,
+        value: lang.codes[0],
+        customElement: (
+          <span
+            className={classNames([
+              `flag-icon flag-icon-${lang.flag}`,
+              Flag,
+            ])}
+          />
+        ),
+      }))}
+      onChange={({ value }) => i18n.changeLanguage(value)}
+    />
   )
 }
 

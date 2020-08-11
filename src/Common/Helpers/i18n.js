@@ -44,6 +44,10 @@ i18n
           'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.':
             'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.',
           'Projets personnels': 'Projets personnels',
+          'Aucun résultat': 'Aucun résultat',
+          "Projects d'école": "Projects d'école",
+          'Compilateur / arène de combat de champions informatique.': 'Compilateur / arène de combat de champions informatique.',
+          'Trouver ses solutions pour la SmartMétropole.': 'Trouver ses solutions pour la SmartMétropole.',
         },
       },
       en: {
@@ -82,6 +86,10 @@ i18n
           'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.':
             'Platform for putting importers / exporters and forwarders in touch with each other.',
           'Projets personnels': 'Personal projects',
+          'Aucun résultat': 'No result',
+          "Projects d'école": 'School projects',
+          'Compilateur / arène de combat de champions informatique.': 'Compiler / battle arena of computer champions.',
+          'Trouver ses solutions pour la SmartMétropole.': 'Find solutions for the SmartMétropole.',
         },
       },
       // se: {

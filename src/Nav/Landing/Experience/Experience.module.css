@@ -19,20 +19,12 @@
   color: #2e3440;
 }
 
-.Dark .Left,
-.Dark .Arrow {
+.Dark .Left {
   color: #80C0D0;
 }
 
-.Light .Left,
-.Light .Arrow {
+.Light .Left {
   color: #5E81AC;
-}
-
-.Wrapper a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
 }
 
 .Left {
@@ -81,27 +73,6 @@
 .Light .ExperienceClass > div:first-child > p,
 .Light .ExperienceClass > div:last-child > p {
   color: #444452;
-}
-
-.CV {
-  font-size: 20px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.CV > p {
-  margin: 0;
-}
-
-.CV > .Arrow {
-  margin-left: 20px;
-  transition: .2s ease-in-out;
-}
-
-.CV:hover > .Arrow {
-  margin-left: 40px;
 }
 
 @media (max-width: 1200px) {

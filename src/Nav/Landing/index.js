@@ -22,6 +22,7 @@ import Skills from './Skills'
 import Experience from './Experience'
 import Projects from './Projects'
 // import PersonalProjects from './PersonalProjects'
+import SchoolProjects from './SchoolProjects'
 import FixedLinks from './FixedLinks'
 import { ReactComponent as UpHand } from './upHand.svg'
 
@@ -52,6 +53,7 @@ const Landing = () => {
         <Experience />
         <Projects />
         {/* <PersonalProjects /> */}
+        <SchoolProjects />
       </div>
       <div className={Footer}>
         <FixedLinks />

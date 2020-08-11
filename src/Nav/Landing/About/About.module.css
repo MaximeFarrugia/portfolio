@@ -19,12 +19,20 @@
   color: #2e3440;
 }
 
-.Dark .Left {
+.Dark .Left,
+.Dark .Arrow {
   color: #80C0D0;
 }
 
-.Light .Left {
+.Light .Left,
+.Light .Arrow {
   color: #5E81AC;
+}
+
+.Wrapper a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .Left {
@@ -40,6 +48,27 @@
 
 .Right > p:last-child {
   margin-bottom: 0;
+}
+
+.CV {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.CV > p {
+  margin: 0;
+}
+
+.CV > .Arrow {
+  margin-left: 20px;
+  transition: .2s ease-in-out;
+}
+
+.CV:hover > .Arrow {
+  margin-left: 40px;
 }
 
 @media (max-width: 1200px) {

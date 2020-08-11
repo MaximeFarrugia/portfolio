@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-import Icon from '@material-ui/core/Icon'
 import { useInView } from 'react-intersection-observer'
 
 import {
@@ -12,8 +11,6 @@ import {
   Left,
   Right,
   ExperienceClass,
-  CV,
-  Arrow,
 } from './Experience.module.css'
 
 import classNames from '../../../Common/Helpers/classNames'
@@ -59,15 +56,6 @@ const Experience = ({ className }) => {
             </div>
           </div>
         ))}
-        <a
-          className={CV}
-          href="/res/cv_Maxime_Farrugia_2018.pdf"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <p>{t('Voir mon CV')}</p>
-          <Icon className={Arrow}>arrow_forward</Icon>
-        </a>
       </div>
     </div>
   )
