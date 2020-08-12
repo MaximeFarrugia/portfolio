@@ -99,9 +99,3 @@
     padding: 50px;
   }
 }
-
-@media (max-width: 375px) {
-  .Wrapper {
-    padding: 25px;
-  }
-}

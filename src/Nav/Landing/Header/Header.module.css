@@ -106,6 +106,12 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .Selectors {
+    left: 50%;
+    right: unset;
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 500px) {
@@ -113,17 +119,24 @@
     padding: 200px 50px;
   }
 
-  .Selectors {
-    top: 30px;
-    right: 30px;
+  .Wrapper {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 414px) {
+  .Wrapper .Selectors {
+    flex-direction: column-reverse;
+    align-items: center;
+    top: 20px;
+  }
+
+  .LangSelectClass {
+    margin: 10px 0 0 0;
   }
 }
 
 @media (max-width: 320px) {
-  .Wrapper {
-    font-size: 24px;
-  }
-
   .Contact {
     font-size: 15px;
   }

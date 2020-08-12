@@ -17,12 +17,43 @@
 }
 
 .Wrapper > .Arrow {
-  opacity: 0;
+  opacity: 0.5;
   margin-left: 20px;
-  transition: opacity .15s ease-in-out, margin-left .2s ease-in-out .15s;
+  animation: arrowOut .35s ease-in-out;
 }
 
 .Wrapper:hover > .Arrow {
   opacity: 1;
   margin-left: 40px;
+  animation: arrowIn .35s ease-in-out;
+}
+
+@keyframes arrowIn {
+  0% {
+    opacity: 0.5;
+    margin-left: 20px;
+  }
+  50% {
+    opacity: 1;
+    margin-left: 20px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 40px;
+  }
+}
+
+@keyframes arrowOut {
+  0% {
+    opacity: 1;
+    margin-left: 40px;
+  }
+  50% {
+    opacity: 1;
+    margin-left: 20px;
+  }
+  100% {
+    opacity: 0.5;
+    margin-left: 20px;
+  }
 }

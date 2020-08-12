@@ -44,7 +44,7 @@ const Skills = ({ className }) => {
           </thead>
           <tbody>
             <tr>
-              <td>Javascript (ES6+)</td>
+              <td>Javascript</td>
               <td>React</td>
               <td>Bash</td>
             </tr>

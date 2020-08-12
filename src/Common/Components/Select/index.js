@@ -91,7 +91,7 @@ const Select = ({
             height: '100%',
             border: 'none',
             backgroundColor: darkTheme ? '#eceff4' : '#2e3440',
-            '& > div:first-child': {
+            '& > div:first-of-type': {
               height: 'inherit',
               maxHeight: 'inherit',
               overflow: 'auto',

@@ -24,8 +24,8 @@ i18n
           Déc: 'Déc',
           Présent: 'Présent',
           'Bonjour !': 'Bonjour !',
-          'Je suis<strong> Maxime Farrugia</strong>, développeur web et étudiant en informatique.':
-            'Je suis<strong> Maxime Farrugia</strong>, développeur web et étudiant en informatique.',
+          'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.':
+            'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.',
           'Me contacter': 'Me contacter',
           'A propos de moi': 'A propos de moi',
           'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.':
@@ -45,7 +45,7 @@ i18n
             'Plateforme de mise en relation entre importateurs / exportateurs et transitaires.',
           'Projets personnels': 'Projets personnels',
           'Aucun résultat': 'Aucun résultat',
-          "Projects d'école": "Projects d'école",
+          "Projets d'école": "Projets d'école",
           'Compilateur / arène de combat de champions informatique.': 'Compilateur / arène de combat de champions informatique.',
           'Trouver ses solutions pour la SmartMétropole.': 'Trouver ses solutions pour la SmartMétropole.',
         },
@@ -66,8 +66,8 @@ i18n
           Déc: 'Dec',
           Présent: 'Present',
           'Bonjour !': 'Hello !',
-          'Je suis<strong> Maxime Farrugia</strong>, développeur web et étudiant en informatique.':
-            "I'm<strong> Maxime Farrugia</strong>, web developer and computer science student.",
+          'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.':
+            "I'm<strong> Maxime Farrugia</strong>, freelance developer and computer science student.",
           'Me contacter': 'Contact me',
           'A propos de moi': 'About me',
           'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.':
@@ -87,7 +87,7 @@ i18n
             'Platform for putting importers / exporters and forwarders in touch with each other.',
           'Projets personnels': 'Personal projects',
           'Aucun résultat': 'No result',
-          "Projects d'école": 'School projects',
+          "Projets d'école": 'School projects',
           'Compilateur / arène de combat de champions informatique.': 'Compiler / battle arena of computer champions.',
           'Trouver ses solutions pour la SmartMétropole.': 'Find solutions for the SmartMétropole.',
         },

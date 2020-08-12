@@ -39,7 +39,7 @@ const Header = ({ className }) => {
         <Trans>
           Je suis
           <strong> Maxime Farrugia</strong>
-          , développeur web et étudiant en informatique.
+          , développeur freelance et étudiant en informatique.
         </Trans>
       </p>
       <div className={Contact}>
