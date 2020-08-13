@@ -46,8 +46,12 @@ i18n
           'Projets personnels': 'Projets personnels',
           'Aucun résultat': 'Aucun résultat',
           "Projets d'école": "Projets d'école",
-          'Compilateur / arène de combat de champions informatique.': 'Compilateur / arène de combat de champions informatique.',
-          'Trouver ses solutions pour la SmartMétropole.': 'Trouver ses solutions pour la SmartMétropole.',
+          'Compilateur / arène de combat de champions informatique.':
+            'Compilateur / arène de combat de champions informatique.',
+          "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.":
+            "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.",
+          'Trouver ses solutions pour la SmartMétropole.':
+            'Trouver ses solutions pour la SmartMétropole.',
         },
       },
       en: {
@@ -88,8 +92,12 @@ i18n
           'Projets personnels': 'Personal projects',
           'Aucun résultat': 'No result',
           "Projets d'école": 'School projects',
-          'Compilateur / arène de combat de champions informatique.': 'Compiler / battle arena of computer champions.',
-          'Trouver ses solutions pour la SmartMétropole.': 'Find solutions for the SmartMétropole.',
+          'Compilateur / arène de combat de champions informatique.':
+            'Compiler / battle arena of computer champions.',
+          "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.":
+            'Reproduction of a management game of a living world and its inhabitants.',
+          'Trouver ses solutions pour la SmartMétropole.':
+            'Find solutions for the SmartMétropole.',
         },
       },
       // se: {

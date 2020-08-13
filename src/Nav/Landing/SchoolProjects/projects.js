@@ -8,7 +8,7 @@ const projects = [
   },
   {
     project: 'Zappy',
-    desc: 'Compilateur / arène de combat de champions informatique.',
+    desc: "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.",
     link: 'https://github.com/MaximeFarrugia/PSU_zappy_2019',
     tags: ['C', 'Python', 'Unity', 'IA', 'Game', 'Network'],
   },
