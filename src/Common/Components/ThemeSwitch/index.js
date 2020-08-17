@@ -20,15 +20,13 @@ const ThemeSwitch = ({ className }) => {
 
   return (
     <div className={classNames([className, Wrapper])}>
-      <Sun
-        className={classNames([Icon, darkTheme ? Dark : Light])}
-      />
+      <Moon className={classNames([Icon, darkTheme ? Dark : Light])} />
       <Switch
         className={classNames([SwitchClass, darkTheme ? Dark : Light])}
         onChange={() => setDarkTheme(!darkTheme)}
         checked={!darkTheme}
       />
-      <Moon className={classNames([Icon, darkTheme ? Dark : Light])} />
+      <Sun className={classNames([Icon, darkTheme ? Dark : Light])} />
     </div>
   )
 }

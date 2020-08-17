@@ -34,7 +34,7 @@ const About = ({ className }) => {
       ])}
     >
       <div className={Left}>
-        <p>{t('A propos de moi')}</p>
+        <p>{t('À propos de moi')}</p>
       </div>
       <div className={Right}>
         <p>

@@ -27,7 +27,7 @@ i18n
           'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.':
             'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.',
           'Me contacter': 'Me contacter',
-          'A propos de moi': 'A propos de moi',
+          'À propos de moi': 'À propos de moi',
           'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.':
             'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.',
           "Je suis rentré dans le monde du développement web, lors de ma période de stage, à l'issue de ma première année au sein d’EPITECH.":
@@ -73,7 +73,7 @@ i18n
           'Je suis<strong> Maxime Farrugia</strong>, développeur freelance et étudiant en informatique.':
             "I'm<strong> Maxime Farrugia</strong>, freelance developer and computer science student.",
           'Me contacter': 'Contact me',
-          'A propos de moi': 'About me',
+          'À propos de moi': 'About me',
           'Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.':
             'I am currently at the end of the 2nd year of study at EPITECH school, in a BAC + 5 course, in order to obtain a Computer Science degree.',
           "Je suis rentré dans le monde du développement web, lors de ma période de stage, à l'issue de ma première année au sein d’EPITECH.":
