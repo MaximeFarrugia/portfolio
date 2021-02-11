@@ -18,6 +18,16 @@ import {
 import classNames from '../../../Common/Helpers/classNames'
 import { Context } from '../../../App'
 
+const getCV = (locale, darkTheme) => {
+  const cvs = {
+    fr: {
+      dark: "/res/cv/dark/cv_Maxime_Farrugia_2021.pdf",
+      light: "/res/cv/light/cv_Maxime_Farrugia_2021.pdf",
+    }
+  }
+  return cvs[locale][darkTheme ? 'dark' : 'light'] || cvs.fr.dark
+}
+
 const About = ({ className }) => {
   const { darkTheme } = useContext(Context)
   const { t } = useTranslation()
@@ -59,7 +69,7 @@ const About = ({ className }) => {
         </p>
         <a
           className={CV}
-          href="/res/cv_Maxime_Farrugia_2018.pdf"
+          href={getCV('fr', darkTheme)}
           rel="noopener noreferrer"
           target="_blank"
         >
