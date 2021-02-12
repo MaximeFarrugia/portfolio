@@ -16,6 +16,7 @@ import {
 } from './About.module.css'
 
 import classNames from '../../../Common/Helpers/classNames'
+import getLocale from '../../../Common/Helpers/getLocale'
 import { Context } from '../../../App'
 
 const getCV = (locale, darkTheme) => {
@@ -23,6 +24,10 @@ const getCV = (locale, darkTheme) => {
     fr: {
       dark: "/res/cv/dark/cv_Maxime_Farrugia_2021.pdf",
       light: "/res/cv/light/cv_Maxime_Farrugia_2021.pdf",
+    },
+    en: {
+      dark: "/res/cv/dark/resume_Maxime_Farrugia_2021.pdf",
+      light: "/res/cv/light/resume_Maxime_Farrugia_2021.pdf",
     }
   }
   return cvs[locale][darkTheme ? 'dark' : 'light'] || cvs.fr.dark
@@ -30,7 +35,8 @@ const getCV = (locale, darkTheme) => {
 
 const About = ({ className }) => {
   const { darkTheme } = useContext(Context)
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const { codes: [locale] } = getLocale(i18n)
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
@@ -69,7 +75,7 @@ const About = ({ className }) => {
         </p>
         <a
           className={CV}
-          href={getCV('fr', darkTheme)}
+          href={getCV(locale, darkTheme)}
           rel="noopener noreferrer"
           target="_blank"
         >

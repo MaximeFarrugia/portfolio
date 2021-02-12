@@ -5,19 +5,12 @@ import { useTranslation } from 'react-i18next'
 import { Flag } from './LangSelect.module.css'
 
 import classNames from '../../Helpers/classNames'
+import getLocale, { langs } from '../../Helpers/getLocale'
 import Select from '../Select'
-
-const langs = [
-  { lang: 'English', codes: ['en', 'en-US'], flag: 'gb' },
-  { lang: 'Francais', codes: ['fr'], flag: 'fr' },
-  // { lang: 'Svenska', codes: ['sv'], flag: 'se' },
-]
 
 const LangSelect = ({ className }) => {
   const { i18n } = useTranslation()
-  const currentLang = langs.find((lang) =>
-    lang.codes.some((l) => i18n.language.split(',').includes(l)),
-  ) || langs[0]
+  const currentLang = getLocale(i18n)
 
   return (
     <Select

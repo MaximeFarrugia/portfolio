@@ -57,7 +57,7 @@ const Landing = () => {
       </div>
       <div className={Footer}>
         <FixedLinks />
-        <p>Maxime Farrugia - 2020</p>
+        <p>{`Maxime Farrugia - ${new Date().getFullYear()}`}</p>
       </div>
       {gotoTop && (
         <UpHand
