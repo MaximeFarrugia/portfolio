@@ -7,7 +7,9 @@ import { Context } from '../../../App'
 import { ReactComponent as SunIcon } from './sun.svg'
 import { ReactComponent as MoonIcon } from './moon.svg'
 
-export const availableThemes = {
+export const KEY_THEME = '@maxime-farrugia/theme'
+
+const availableThemes = {
   dark: {
     name: 'dark',
     background: '#2e3440',
@@ -24,6 +26,15 @@ export const availableThemes = {
   },
 }
 
+export const loadTheme = () => {
+  const storedTheme = localStorage.getItem(KEY_THEME)
+  const theme = availableThemes[storedTheme]
+  if (!storedTheme || !theme) return availableThemes.dark
+  return theme
+}
+
+const saveTheme = theme => localStorage.setItem(KEY_THEME, theme.name)
+
 const ThemeSwitch = ({ className }) => {
   const { theme, setTheme } = useContext(Context)
 
@@ -31,9 +42,12 @@ const ThemeSwitch = ({ className }) => {
     <Wrapper className={className}>
       <Moon />
       <Switch
-        onChange={() =>
-          setTheme(availableThemes[theme.name === 'dark' ? 'light' : 'dark'])
-        }
+        onChange={() => {
+          const selectedTheme =
+            availableThemes[theme.name === 'dark' ? 'light' : 'dark']
+          saveTheme(selectedTheme)
+          setTheme(selectedTheme)
+        }}
         checked={theme.name !== 'dark'}
       />
       <Sun />

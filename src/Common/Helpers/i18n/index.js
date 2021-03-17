@@ -5,14 +5,14 @@ import { template } from 'lodash'
 // https://www.i18next.com/translation-function/plurals
 import translations from './translations.json'
 
+export const KEY_USER_LANGUAGE = '@maxime-farrugia/user-locale'
+
 const availableLanguages = ['fr', 'en']
 export const langs = [
   { lang: 'English', code: 'en', flag: 'gb' },
   { lang: 'Francais', code: 'fr', flag: 'fr' },
   // { lang: 'Svenska', code: 'sv', flag: 'se' },
 ]
-
-export const KEY_USER_LANGUAGE = '@maxime-farrugia/user-locale'
 
 const getUserLanguage = () => {
   const navigatorLanguage = navigator.language.slice(0, 2)

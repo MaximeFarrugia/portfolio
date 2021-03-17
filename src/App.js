@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import * as Sentry from '@sentry/browser'
 
-import { availableThemes } from './Common/Components/ThemeSwitch'
+import { loadTheme } from './Common/Components/ThemeSwitch'
 import { getLocale } from './Common/Helpers/i18n'
 import Nav from './Nav'
 
@@ -11,7 +11,7 @@ export const Context = createContext()
 
 class App extends React.Component {
   state = {
-    theme: availableThemes.dark,
+    theme: loadTheme(),
   }
 
   componentDidCatch(error, errorInfo) {
