@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
-import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 import Icon from '@material-ui/core/Icon'
 
@@ -16,10 +15,10 @@ import {
 } from './About.module.css'
 
 import classNames from '../../../Common/Helpers/classNames'
-import getLocale from '../../../Common/Helpers/getLocale'
+import { translate as t, getLocale } from '../../../Common/Helpers/i18n'
 import { Context } from '../../../App'
 
-const getCV = (locale, darkTheme) => {
+const getCV = (locale, theme) => {
   const cvs = {
     fr: {
       dark: "/res/cv/dark/cv_Maxime_Farrugia_2021.pdf",
@@ -30,13 +29,12 @@ const getCV = (locale, darkTheme) => {
       light: "/res/cv/light/resume_Maxime_Farrugia_2021.pdf",
     }
   }
-  return cvs[locale][darkTheme ? 'dark' : 'light'] || cvs.fr.dark
+  return cvs[locale][theme.name] || cvs.fr.dark
 }
 
 const About = ({ className }) => {
-  const { darkTheme } = useContext(Context)
-  const { t, i18n } = useTranslation()
-  const { codes: [locale] } = getLocale(i18n)
+  const { theme } = useContext(Context)
+  const locale = getLocale()
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
@@ -45,7 +43,6 @@ const About = ({ className }) => {
       className={classNames([
         className,
         Wrapper,
-        darkTheme ? Dark : Light,
         inView && Visible,
       ])}
     >
@@ -75,7 +72,7 @@ const About = ({ className }) => {
         </p>
         <a
           className={CV}
-          href={getCV(locale, darkTheme)}
+          href={getCV(locale, theme)}
           rel="noopener noreferrer"
           target="_blank"
         >

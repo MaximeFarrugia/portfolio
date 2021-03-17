@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
-import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import {
@@ -13,6 +12,7 @@ import {
   ProjectClass,
 } from './Projects.module.css'
 
+import { translate as t } from '../../../Common/Helpers/i18n'
 import classNames from '../../../Common/Helpers/classNames'
 import { Context } from '../../../App'
 import projects from './projects'
@@ -20,7 +20,6 @@ import LinkFadingArrow from '../../../Common/Components/LinkFadingArrow'
 
 const Projects = ({ className }) => {
   const { darkTheme } = useContext(Context)
-  const { t } = useTranslation()
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (

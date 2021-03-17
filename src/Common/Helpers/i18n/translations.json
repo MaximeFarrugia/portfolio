@@ -1,0 +1,342 @@
+[
+  {
+    "fr": {
+      "singular": "Janv",
+      "other": ""
+    },
+    "en": {
+      "singular": "Jan",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Févr",
+      "other": ""
+    },
+    "en": {
+      "singular": "Feb",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Mars",
+      "other": ""
+    },
+    "en": {
+      "singular": "Mar",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Avr",
+      "other": ""
+    },
+    "en": {
+      "singular": "Apr",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Mai",
+      "other": ""
+    },
+    "en": {
+      "singular": "May",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Juin",
+      "other": ""
+    },
+    "en": {
+      "singular": "Jun",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Juill",
+      "other": ""
+    },
+    "en": {
+      "singular": "Jul",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Août",
+      "other": ""
+    },
+    "en": {
+      "singular": "Aug",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Sept",
+      "other": ""
+    },
+    "en": {
+      "singular": "Sept",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Oct",
+      "other": ""
+    },
+    "en": {
+      "singular": "Oct",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Nov",
+      "other": ""
+    },
+    "en": {
+      "singular": "Nov",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Déc",
+      "other": ""
+    },
+    "en": {
+      "singular": "Dec",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Présent",
+      "other": ""
+    },
+    "en": {
+      "singular": "Present",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Bonjour !",
+      "other": ""
+    },
+    "en": {
+      "singular": "Hello !",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Je suis **Maxime Farrugia**, développeur freelance et étudiant en informatique.",
+      "other": ""
+    },
+    "en": {
+      "singular": "I'm **Maxime Farrugia**, freelance developer and computer science student.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Me contacter",
+      "other": ""
+    },
+    "en": {
+      "singular": "Contact me",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "À propos de moi",
+      "other": ""
+    },
+    "en": {
+      "singular": "About me",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.",
+      "other": ""
+    },
+    "en": {
+      "singular": "I am currently at the end of the 2nd year of study at EPITECH school, in a BAC + 5 course, in order to obtain a Computer Science degree.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Je suis rentré dans le monde du développement web, lors de ma période de stage, à l'issue de ma première année au sein d’EPITECH.",
+      "other": ""
+    },
+    "en": {
+      "singular": "I entered the world of web development, during my internship period, at the end of my first year at EPITECH",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Par la suite, j’aimerais m’orienter vers le domaine de la sécurité informatique.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Later on, I would like to move into the field of computer security.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Compétences",
+      "other": ""
+    },
+    "en": {
+      "singular": "Skills",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Langages",
+      "other": ""
+    },
+    "en": {
+      "singular": "Languages",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Outils",
+      "other": ""
+    },
+    "en": {
+      "singular": "Tools",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Expérience",
+      "other": ""
+    },
+    "en": {
+      "singular": "Experience",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Développeur web",
+      "other": ""
+    },
+    "en": {
+      "singular": "Web developer",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Voir mon CV",
+      "other": ""
+    },
+    "en": {
+      "singular": "View my resume",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Projets réalisés",
+      "other": ""
+    },
+    "en": {
+      "singular": "Featured projects",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Plateforme de mise en relation entre importateurs / exportateurs et transitaires.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Platform for putting importers / exporters and forwarders in touch with each other.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Projets personnels",
+      "other": ""
+    },
+    "en": {
+      "singular": "Personal projects",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Aucun résultat",
+      "other": ""
+    },
+    "en": {
+      "singular": "No result",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Projets d'école",
+      "other": ""
+    },
+    "en": {
+      "singular": "School projects",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Compilateur / arène de combat de champions informatique.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Compiler / battle arena of computer champions.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Reproduction of a management game of a living world and its inhabitants.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Trouver des solutions pour la SmartMétropole.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Find solutions for the SmartMétropole.",
+      "other": ""
+    }
+  }
+]

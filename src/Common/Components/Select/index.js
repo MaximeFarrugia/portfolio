@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { func, string, bool, oneOfType, shape, arrayOf } from 'prop-types'
 import ReactSelect, { components } from 'react-select'
-import { useTranslation } from 'react-i18next'
 
+import { translate as t } from '../../Helpers/i18n'
 import Icon from '../Icon'
 import { Context } from '../../../App'
 
@@ -37,7 +37,6 @@ const Select = ({
   onScroll,
   ...props
 }) => {
-  const { t } = useTranslation()
   const { theme } = useContext(Context)
 
   return (
@@ -68,6 +67,7 @@ const Select = ({
             height: '100%',
             border: 'none',
             backgroundColor: theme.primary,
+            cursor: 'pointer',
             '& > div:first-of-type': {
               height: 'inherit',
               maxHeight: 'inherit',
@@ -109,6 +109,7 @@ const Select = ({
             fontSize: '14px',
             color: isDisabled ? '#9b9b9b' : theme.background,
             fontWeight: isDisabled ? 500 : 'normal',
+            cursor: 'pointer',
             '&:hover': !isDisabled && {
               backgroundColor: theme.accent,
               color: theme.primary,
@@ -176,7 +177,6 @@ const Wrapper = styled.div`
   font-size: 12px;
   color: #9b9b9b;
   min-height: 40px;
-  cursor: pointer;
 `
 
 const SelectClass = styled(ReactSelect)`
@@ -204,7 +204,6 @@ const RequiredInput = styled.input`
   left: 50%;
   width: 0px;
   height: 0px;
-  cursor: default;
   border: none;
   outline: none;
 `

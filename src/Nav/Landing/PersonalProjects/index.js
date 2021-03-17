@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
-import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import {
@@ -16,6 +15,7 @@ import {
   TagClass,
 } from './PersonalProjects.module.css'
 
+import { translate as t } from '../../../Common/Helpers/i18n'
 import classNames from '../../../Common/Helpers/classNames'
 import { Context } from '../../../App'
 import projects from './projects'
@@ -24,7 +24,6 @@ import Tag from '../../../Common/Components/Tag'
 
 const PersonalProjects = ({ className }) => {
   const { darkTheme } = useContext(Context)
-  const { t } = useTranslation()
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (

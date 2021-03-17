@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { string } from 'prop-types'
-import { useTranslation, Trans } from 'react-i18next'
 
 import {
   Wrapper,
@@ -14,6 +13,7 @@ import {
   Underlined,
 } from './Header.module.css'
 
+import { translate as t } from '../../../Common/Helpers/i18n'
 import LangSelect from '../../../Common/Components/LangSelect'
 import ThemeSwitch from '../../../Common/Components/ThemeSwitch'
 import classNames from '../../../Common/Helpers/classNames'
@@ -23,7 +23,6 @@ import { Context } from '../../../App'
 
 const Header = ({ className }) => {
   const { darkTheme } = useContext(Context)
-  const { t } = useTranslation()
 
   return (
     <div className={classNames([className, Wrapper, darkTheme ? Dark : Light])}>
@@ -36,11 +35,11 @@ const Header = ({ className }) => {
         <Wave className={WaveClass} />
       </div>
       <p>
-        <Trans>
-          Je suis
-          <strong> Maxime Farrugia</strong>
-          , développeur freelance et étudiant en informatique.
-        </Trans>
+        {t(
+          'Je suis **Maxime Farrugia**, développeur freelance et étudiant en informatique.',
+          null,
+          { md: true },
+        )}
       </p>
       <div className={Contact}>
         <div>
