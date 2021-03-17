@@ -19,11 +19,11 @@ jobs:
           node-version: '14'
       - run: npm install
       - name: Build
-      - run: |
+        run: |
           npm run-script build
           tar zcvf build.tar.gz build
       - name: Upload
-      - uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
