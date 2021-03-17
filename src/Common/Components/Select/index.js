@@ -1,23 +1,9 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useContext } from 'react'
-import {
-  func, string, bool, oneOfType, shape, arrayOf,
-} from 'prop-types'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import { func, string, bool, oneOfType, shape, arrayOf } from 'prop-types'
 import ReactSelect, { components } from 'react-select'
 import { useTranslation } from 'react-i18next'
 
-import {
-  SelectWrapper,
-  SelectClass,
-  CheckIcon,
-  RequiredInput,
-  CancelIcon,
-  Focused,
-  Dark,
-  Light,
-} from './Select.module.css'
-
-import classNames from '../../Helpers/classNames'
 import Icon from '../Icon'
 import { Context } from '../../../App'
 
@@ -25,7 +11,7 @@ const Option = ({ data, isSelected, ...props }) => (
   <components.Option {...props}>
     {data.customElement}
     {data.label}
-    {isSelected && <Icon className={CheckIcon}>check</Icon>}
+    {isSelected && <CheckIcon>check</CheckIcon>}
   </components.Option>
 )
 
@@ -38,7 +24,7 @@ const SingleValue = ({ data, ...props }) => (
 
 const MultiValueRemove = props => (
   <components.MultiValueRemove {...props}>
-    <Icon className={CancelIcon}>cancel</Icon>
+    <CancelIcon>cancel</CancelIcon>
   </components.MultiValueRemove>
 )
 
@@ -51,25 +37,16 @@ const Select = ({
   onScroll,
   ...props
 }) => {
-  const [focused, setFocused] = useState(false)
   const { t } = useTranslation()
-  const { darkTheme } = useContext(Context)
+  const { theme } = useContext(Context)
 
   return (
-    <div className={SelectWrapper}>
-      <ReactSelect
+    <Wrapper className={className}>
+      <SelectClass
         {...props}
-        className={classNames([
-          SelectClass,
-          focused && Focused,
-          className,
-          darkTheme ? Dark : Light,
-        ])}
         value={value}
         isMulti={isMulti}
         noOptionsMessage={() => noOptionsMessage || t('Aucun résultat')}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
         onMenuScrollToBottom={() => onScroll()}
         components={{
           Option,
@@ -90,7 +67,7 @@ const Select = ({
             maxHeight: 'inherit',
             height: '100%',
             border: 'none',
-            backgroundColor: darkTheme ? '#eceff4' : '#2e3440',
+            backgroundColor: theme.primary,
             '& > div:first-of-type': {
               height: 'inherit',
               maxHeight: 'inherit',
@@ -103,7 +80,8 @@ const Select = ({
           }),
           menuList: base => ({
             ...base,
-            backgroundColor: darkTheme ? '#eceff4' : '#2e3440',
+            backgroundColor: theme.primary,
+            borderRadius: '0 0 5px 5px',
           }),
           indicatorSeparator: base => ({
             ...base,
@@ -111,9 +89,9 @@ const Select = ({
           }),
           dropdownIndicator: base => ({
             ...base,
-            color: darkTheme ? '#2e3440' : '#eceff4',
+            color: theme.background,
             '&:hover': {
-              color: darkTheme ? '#2e3440' : '#eceff4',
+              color: theme.background,
             },
           }),
           placeholder: base => ({
@@ -127,19 +105,20 @@ const Select = ({
             justifyContent: 'left',
             alignItems: 'center',
             textAlign: 'left',
-            backgroundColor: darkTheme ? '#eceff4' : '#2e3440',
+            backgroundColor: theme.primary,
             fontSize: '14px',
-            color: isDisabled ? '#9b9b9b' : darkTheme ? '#2e3440' : '#eceff4',
+            color: isDisabled ? '#9b9b9b' : theme.background,
             fontWeight: isDisabled ? 500 : 'normal',
             '&:hover': !isDisabled && {
-              backgroundColor: '#5e81ac',
+              backgroundColor: theme.accent,
+              color: theme.primary,
             },
           }),
           singleValue: base => ({
             ...base,
             overflow: 'visible',
             fontSize: '14px',
-            color: darkTheme ? '#2e3440' : '#eceff4',
+            color: theme.background,
             fontWeight: 'normal',
             display: 'flex',
             alignItems: 'center',
@@ -149,7 +128,7 @@ const Select = ({
             height: '25px',
             borderRadius: '10px',
             fontSize: '14px',
-            color: darkTheme ? '#2e3440' : '#eceff4',
+            color: theme.background,
             fontWeight: 'normal',
             backgroundColor: '#f3f3f3',
             display: 'flex',
@@ -164,11 +143,10 @@ const Select = ({
           }),
         }}
       />
-      <input
+      <RequiredInput
         required={required && (value === '' || (isMulti && !value.length))}
-        className={RequiredInput}
       />
-    </div>
+    </Wrapper>
   )
 }
 
@@ -193,5 +171,42 @@ Select.defaultProps = {
   required: false,
   onScroll: () => {},
 }
+
+const Wrapper = styled.div`
+  font-size: 12px;
+  color: #9b9b9b;
+  min-height: 40px;
+  cursor: pointer;
+`
+
+const SelectClass = styled(ReactSelect)`
+  border: 1px solid ${props => props.theme.background};
+  border-radius: 5px;
+`
+
+const CheckIcon = styled(Icon)`
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+`
+
+const CancelIcon = styled(Icon)`
+  font-size: 16px;
+  color: #7a7a7a;
+`
+
+const RequiredInput = styled.input`
+  font-size: 12px;
+  font-weight: 300;
+  position: absolute;
+  background-color: transparent;
+  bottom: 0;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  cursor: default;
+  border: none;
+  outline: none;
+`
 
 export default Select

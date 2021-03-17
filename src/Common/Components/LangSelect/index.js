@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
 
-import classNames from '../../Helpers/classNames'
 import getLocale, { langs } from '../../Helpers/getLocale'
 import Select from '../Select'
 
@@ -13,7 +12,7 @@ const LangSelect = ({ className }) => {
 
   return (
     <Select
-      className={classNames([className])}
+      className={className}
       value={{
         label: currentLang.lang,
         value: currentLang.codes[0],
