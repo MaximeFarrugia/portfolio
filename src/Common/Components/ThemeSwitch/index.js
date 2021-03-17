@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import SwitchComponent from '../Switch'
+import Switch from '../Switch'
 import { Context } from '../../../App'
 import { ReactComponent as SunIcon } from './sun.svg'
 import { ReactComponent as MoonIcon } from './moon.svg'
@@ -60,16 +60,6 @@ const Sun = styled(SunIcon)`
 
   & path {
     fill: ${props => props.theme.primary};
-  }
-`
-
-const Switch = styled(SwitchComponent)`
-  background-color: ${props => props.theme.primary};
-  border-color: ${props => props.theme.background};
-
-  &::before {
-    background-color: ${props => props.theme.background};
-    border-color: ${props => props.theme.primary};
   }
 `
 
