@@ -2,10 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { string } from 'prop-types'
 
-const Tag = ({ name }) => <Wrapper>{name}</Wrapper>
+const Tag = ({ className, name }) => (
+  <Wrapper className={className}>{name}</Wrapper>
+)
 
 Tag.propTypes = {
+  className: string,
   name: string.isRequired,
+}
+
+Tag.defaultProps = {
+  className: '',
 }
 
 const Wrapper = styled.div`

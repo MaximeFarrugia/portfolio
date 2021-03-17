@@ -1,9 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { string } from 'prop-types'
 
 const Switch = ({ className, ...props }) => (
-  <Wrapper {...props} type="checkbox" />
+  <Wrapper {...props} className={className} type="checkbox" />
 )
+
+Switch.propTypes = {
+  className: string,
+}
+
+Switch.defaultProps = {
+  className: '',
+}
 
 const Wrapper = styled.input`
   position: relative;

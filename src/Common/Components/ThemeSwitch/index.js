@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { string } from 'prop-types'
 
 import Switch from '../Switch'
 import { Context } from '../../../App'
@@ -23,11 +24,11 @@ export const availableThemes = {
   },
 }
 
-const ThemeSwitch = () => {
+const ThemeSwitch = ({ className }) => {
   const { theme, setTheme } = useContext(Context)
 
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Moon />
       <Switch
         onChange={() =>
@@ -38,6 +39,14 @@ const ThemeSwitch = () => {
       <Sun />
     </Wrapper>
   )
+}
+
+ThemeSwitch.propTypes = {
+  className: string,
+}
+
+ThemeSwitch.defaultProps = {
+  className: '',
 }
 
 const Wrapper = styled.div`

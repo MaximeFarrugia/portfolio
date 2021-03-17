@@ -1,49 +1,81 @@
-import React, { useContext } from 'react'
-import {
-  string,
-  oneOfType,
-  arrayOf,
-  node,
-} from 'prop-types'
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+import { string, oneOfType, arrayOf, node } from 'prop-types'
 import Icon from '@material-ui/core/Icon'
 
-import {
-  Wrapper,
-  Arrow,
-  Dark,
-  Light,
-} from './LinkFadingArrow.module.css'
-
-import classNames from '../../Helpers/classNames'
-import { Context } from '../../../App'
-
-const LinkFadingArrow = ({ className, link, children }) => {
-  const { darkTheme } = useContext(Context)
-
-  return (
-    <a
-      className={classNames([className, Wrapper, darkTheme ? Dark : Light])}
-      href={link}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {children}
-      <Icon className={Arrow}>arrow_forward</Icon>
-    </a>
-  )
-}
+const LinkFadingArrow = ({ className, link, children }) => (
+  <Wrapper
+    className={className}
+    href={link}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    {children}
+    <Arrow>arrow_forward</Arrow>
+  </Wrapper>
+)
 
 LinkFadingArrow.propTypes = {
   className: string,
   link: string.isRequired,
-  children: oneOfType([
-    arrayOf(node),
-    node,
-  ]).isRequired,
+  children: oneOfType([arrayOf(node), node]).isRequired,
 }
 
 LinkFadingArrow.defaultProps = {
   className: '',
 }
+
+const arrowIn = keyframes`
+  0% {
+    opacity: 0.5;
+    margin-left: 20px;
+  }
+  50% {
+    opacity: 1;
+    margin-left: 20px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 40px;
+  }
+`
+
+const arrowOut = keyframes`
+  0% {
+    opacity: 1;
+    margin-left: 40px;
+  }
+  50% {
+    opacity: 1;
+    margin-left: 20px;
+  }
+  100% {
+    opacity: 0.5;
+    margin-left: 20px;
+  }
+`
+
+const Arrow = styled(Icon)`
+  opacity: 0.5;
+  margin-left: 20px;
+  color: ${props => props.theme.accent};
+  animation: ${arrowOut} 0.35s ease-in-out;
+`
+
+const Wrapper = styled.a`
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover > ${Arrow} {
+    opacity: 1;
+    margin-left: 40px;
+    animation: ${arrowIn} 0.35s ease-in-out;
+  }
+`
 
 export default LinkFadingArrow
