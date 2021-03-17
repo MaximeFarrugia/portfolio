@@ -1,45 +1,29 @@
 import React from 'react'
+import styled from 'styled-components'
 import { string } from 'prop-types'
-import { useTranslation } from 'react-i18next'
 
-import { Flag } from './LangSelect.module.css'
-
-import classNames from '../../Helpers/classNames'
-import getLocale, { langs } from '../../Helpers/getLocale'
+import { getLocale, setLocale, langs } from '../../Helpers/i18n'
 import Select from '../Select'
 
 const LangSelect = ({ className }) => {
-  const { i18n } = useTranslation()
-  const currentLang = getLocale(i18n)
+  const currentLang = langs.find(l => l.code === getLocale())
 
   return (
     <Select
-      className={classNames([className])}
+      className={className}
       value={{
         label: currentLang.lang,
-        value: currentLang.codes[0],
+        value: currentLang.code,
         customElement: (
-          <span
-            className={classNames([
-              `flag-icon flag-icon-${currentLang.flag}`,
-              Flag,
-            ])}
-          />
+          <Flag className={`flag-icon flag-icon-${currentLang.flag}`} />
         ),
       }}
       options={langs.map(lang => ({
         label: lang.lang,
-        value: lang.codes[0],
-        customElement: (
-          <span
-            className={classNames([
-              `flag-icon flag-icon-${lang.flag}`,
-              Flag,
-            ])}
-          />
-        ),
+        value: lang.code,
+        customElement: <Flag className={`flag-icon flag-icon-${lang.flag}`} />,
       }))}
-      onChange={({ value }) => i18n.changeLanguage(value)}
+      onChange={({ value }) => setLocale(value, true)}
     />
   )
 }
@@ -51,5 +35,9 @@ LangSelect.propTypes = {
 LangSelect.defaultProps = {
   className: '',
 }
+
+const Flag = styled.span`
+  margin-right: 10px;
+`
 
 export default LangSelect

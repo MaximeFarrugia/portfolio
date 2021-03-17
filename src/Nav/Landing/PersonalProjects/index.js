@@ -1,65 +1,36 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import { string } from 'prop-types'
-import { useTranslation } from 'react-i18next'
-import { useInView } from 'react-intersection-observer'
 
-import {
-  Wrapper,
-  Visible,
-  Dark,
-  Light,
-  Left,
-  Right,
-  PersonalProjectsClass,
-  Description,
-  Tags,
-  TagClass,
-} from './PersonalProjects.module.css'
-
-import classNames from '../../../Common/Helpers/classNames'
-import { Context } from '../../../App'
+import { translate as t } from '../../../Common/Helpers/i18n'
 import projects from './projects'
 import LinkFadingArrow from '../../../Common/Components/LinkFadingArrow'
-import Tag from '../../../Common/Components/Tag'
+import TagComponent from '../../../Common/Components/Tag'
 
-const PersonalProjects = ({ className }) => {
-  const { darkTheme } = useContext(Context)
-  const { t } = useTranslation()
-  const [ref, inView] = useInView({ triggerOnce: true })
-
-  return (
-    <div
-      ref={ref}
-      className={classNames([
-        className,
-        Wrapper,
-        darkTheme ? Dark : Light,
-        inView && Visible,
-      ])}
-    >
-      <div className={Left}>
-        <p>{t('Projets personnels')}</p>
-      </div>
-      <div className={Right}>
-        {projects.map((project) => (
-          <div className={PersonalProjectsClass} key={project.project}>
-            <LinkFadingArrow link={project.link || '#'}>
-              {project.project}
-            </LinkFadingArrow>
-            <div className={Description}>
-              <p>{t(project.desc)}</p>
-            </div>
-            <div className={Tags}>
-              {project.tags.map((tag) => (
-                <Tag key={tag} className={TagClass} name={tag} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+const PersonalProjects = ({ className }) => (
+  <Wrapper className={className}>
+    <Left>
+      <p>{t('Projets personnels')}</p>
+    </Left>
+    <Right>
+      {projects.map(project => (
+        <PersonalProjectsClass key={project.project}>
+          <LinkFadingArrow link={project.link || '#'}>
+            {project.project}
+          </LinkFadingArrow>
+          <Description>
+            <p>{t(project.desc)}</p>
+          </Description>
+          <Tags>
+            {project.tags.map(tag => (
+              <Tag key={tag} name={tag} />
+            ))}
+          </Tags>
+        </PersonalProjectsClass>
+      ))}
+    </Right>
+  </Wrapper>
+)
 
 PersonalProjects.propTypes = {
   className: string,
@@ -68,5 +39,72 @@ PersonalProjects.propTypes = {
 PersonalProjects.defaultProps = {
   className: '',
 }
+
+const Wrapper = styled.div`
+  padding: 75px 0;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  color: ${props => props.theme.primary};
+
+  @media (max-width: 1200px) {
+    justify-content: center;
+    padding: 100px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 500px) {
+    padding: 50px;
+  }
+`
+
+const Left = styled.div`
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: 700;
+  color: ${props => props.theme.secondary};
+`
+
+const Right = styled.div`
+  max-width: 700px;
+  width: 100%;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1200px) {
+    max-width: 600px;
+    margin-left: auto;
+  }
+`
+
+const PersonalProjectsClass = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+`
+
+const Description = styled.div`
+  font-size: 14px;
+  color: ${props => (props.theme.name === 'dark' ? '#afafbf' : '#444452')};
+
+  & > p {
+    margin: 20px 0;
+  }
+`
+
+const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const Tag = styled(TagComponent)`
+  margin-bottom: 20px;
+  margin-right: 7px;
+`
 
 export default PersonalProjects

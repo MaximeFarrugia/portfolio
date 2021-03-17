@@ -1,33 +1,57 @@
 import React, { useContext } from 'react'
+import styled from 'styled-components'
 import { string } from 'prop-types'
 
-import {
-  Wrapper,
-  SwitchClass,
-  Icon,
-  Dark,
-  Light,
-} from './ThemeSwitch.module.css'
-
-import Switch from '../Switch'
+import SwitchComponent from '../Switch'
 import { Context } from '../../../App'
-import { ReactComponent as Sun } from './sun.svg'
-import { ReactComponent as Moon } from './moon.svg'
-import classNames from '../../Helpers/classNames'
+import { ReactComponent as SunIcon } from './sun.svg'
+import { ReactComponent as MoonIcon } from './moon.svg'
+
+export const KEY_THEME = '@maxime-farrugia/theme'
+
+const availableThemes = {
+  dark: {
+    name: 'dark',
+    background: '#2e3440',
+    primary: '#eceff4',
+    secondary: '#80c0d0',
+    accent: '#5e81ac',
+  },
+  light: {
+    name: 'light',
+    background: '#eceff4',
+    primary: '#2e3440',
+    secondary: '#5e81ac',
+    accent: '#80c0d0',
+  },
+}
+
+export const loadTheme = () => {
+  const storedTheme = localStorage.getItem(KEY_THEME)
+  const theme = availableThemes[storedTheme]
+  if (!storedTheme || !theme) return availableThemes.dark
+  return theme
+}
+
+const saveTheme = theme => localStorage.setItem(KEY_THEME, theme.name)
 
 const ThemeSwitch = ({ className }) => {
-  const { darkTheme, setDarkTheme } = useContext(Context)
+  const { theme, setTheme } = useContext(Context)
 
   return (
-    <div className={classNames([className, Wrapper])}>
-      <Moon className={classNames([Icon, darkTheme ? Dark : Light])} />
+    <Wrapper className={className}>
+      <Moon />
       <Switch
-        className={classNames([SwitchClass, darkTheme ? Dark : Light])}
-        onChange={() => setDarkTheme(!darkTheme)}
-        checked={!darkTheme}
+        onChange={() => {
+          const selectedTheme =
+            availableThemes[theme.name === 'dark' ? 'light' : 'dark']
+          saveTheme(selectedTheme)
+          setTheme(selectedTheme)
+        }}
+        checked={theme.name !== 'dark'}
       />
-      <Sun className={classNames([Icon, darkTheme ? Dark : Light])} />
-    </div>
+      <Sun />
+    </Wrapper>
   )
 }
 
@@ -38,5 +62,32 @@ ThemeSwitch.propTypes = {
 ThemeSwitch.defaultProps = {
   className: '',
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const Switch = styled(SwitchComponent)`
+  margin: 0 10px;
+`
+
+const Moon = styled(MoonIcon)`
+  width: 15px;
+  height: 15px;
+
+  & path {
+    fill: ${props => props.theme.primary};
+  }
+`
+
+const Sun = styled(SunIcon)`
+  width: 15px;
+  height: 15px;
+
+  & path {
+    fill: ${props => props.theme.primary};
+  }
+`
 
 export default ThemeSwitch

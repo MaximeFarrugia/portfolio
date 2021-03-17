@@ -1,45 +1,45 @@
 import React, { createContext } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { withTranslation } from 'react-i18next'
+import { ThemeProvider } from 'styled-components'
 import * as Sentry from '@sentry/browser'
 
+import { loadTheme } from './Common/Components/ThemeSwitch'
+import { getLocale } from './Common/Helpers/i18n'
 import Nav from './Nav'
 
 export const Context = createContext()
 
 class App extends React.Component {
   state = {
-    darkTheme: true,
+    theme: loadTheme(),
   }
 
   componentDidCatch(error, errorInfo) {
-    const { i18n } = this.props
-
-    Sentry.withScope((scope) => {
-        scope.setTag('locale', i18n.language)
-        scope.setExtras(errorInfo)
-        Sentry.captureException(error)
+    Sentry.withScope(scope => {
+      scope.setTag('locale', getLocale())
+      scope.setExtras(errorInfo)
+      Sentry.captureException(error)
     })
   }
 
   render() {
-    const { darkTheme } = this.state
+    const { theme } = this.state
 
     return (
-      <>
-        <Context.Provider
-          value={{
-            darkTheme,
-            setDarkTheme: (t) => this.setState({ darkTheme: t }),
-          }}
-        >
+      <Context.Provider
+        value={{
+          theme,
+          setTheme: t => this.setState({ theme: t }),
+        }}
+      >
+        <ThemeProvider theme={theme}>
           <Router>
             <Nav />
           </Router>
-        </Context.Provider>
-      </>
+        </ThemeProvider>
+      </Context.Provider>
     )
   }
 }
 
-export default withTranslation()(App)
+export default App
