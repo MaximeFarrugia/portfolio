@@ -18,14 +18,12 @@ const Header = ({ className }) => (
       <p>{t('Bonjour !')}</p>
       <Wave />
     </div>
-    <p>
-      {t(
-        'Je suis **Maxime Farrugia**, développeur freelance et ' +
-          'étudiant en informatique.',
-        null,
-        { md: true },
-      )}
-    </p>
+    {t(
+      'Je suis **Maxime Farrugia**, développeur freelance et ' +
+        'étudiant en informatique.',
+      null,
+      { md: true },
+    )}
     <Contact>
       <div>
         <p>{t('Me contacter')}</p>
