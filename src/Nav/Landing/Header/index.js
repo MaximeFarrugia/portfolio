@@ -20,7 +20,8 @@ const Header = ({ className }) => (
     </div>
     <p>
       {t(
-        'Je suis **Maxime Farrugia**, développeur freelance et étudiant en informatique.',
+        'Je suis **Maxime Farrugia**, développeur freelance et ' +
+          'étudiant en informatique.',
         null,
         { md: true },
       )}
@@ -171,7 +172,7 @@ const Contact = styled.div`
 const Underlined = styled.a`
   box-shadow: inset 0 -3px ${props => props.theme.accent};
   padding: 3px 3px;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     box-shadow: inset 0 -33px ${props => props.theme.accent};
