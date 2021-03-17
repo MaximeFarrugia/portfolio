@@ -1,8 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import { string } from 'prop-types'
 import { useTranslation } from 'react-i18next'
-
-import { Flag } from './LangSelect.module.css'
 
 import classNames from '../../Helpers/classNames'
 import getLocale, { langs } from '../../Helpers/getLocale'
@@ -19,25 +18,13 @@ const LangSelect = ({ className }) => {
         label: currentLang.lang,
         value: currentLang.codes[0],
         customElement: (
-          <span
-            className={classNames([
-              `flag-icon flag-icon-${currentLang.flag}`,
-              Flag,
-            ])}
-          />
+          <Flag className={`flag-icon flag-icon-${currentLang.flag}`} />
         ),
       }}
       options={langs.map(lang => ({
         label: lang.lang,
         value: lang.codes[0],
-        customElement: (
-          <span
-            className={classNames([
-              `flag-icon flag-icon-${lang.flag}`,
-              Flag,
-            ])}
-          />
-        ),
+        customElement: <Flag className={`flag-icon flag-icon-${lang.flag}`} />,
       }))}
       onChange={({ value }) => i18n.changeLanguage(value)}
     />
@@ -51,5 +38,9 @@ LangSelect.propTypes = {
 LangSelect.defaultProps = {
   className: '',
 }
+
+const Flag = styled.span`
+  margin-right: 10px;
+`
 
 export default LangSelect
