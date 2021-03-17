@@ -1,42 +1,76 @@
 import React, { useContext } from 'react'
-import { string } from 'prop-types'
+import styled from 'styled-components'
 
-import {
-  Wrapper,
-  SwitchClass,
-  Icon,
-  Dark,
-  Light,
-} from './ThemeSwitch.module.css'
-
-import Switch from '../Switch'
+import SwitchComponent from '../Switch'
 import { Context } from '../../../App'
-import { ReactComponent as Sun } from './sun.svg'
-import { ReactComponent as Moon } from './moon.svg'
-import classNames from '../../Helpers/classNames'
+import { ReactComponent as SunIcon } from './sun.svg'
+import { ReactComponent as MoonIcon } from './moon.svg'
 
-const ThemeSwitch = ({ className }) => {
-  const { darkTheme, setDarkTheme } = useContext(Context)
+export const availableThemes = {
+  dark: {
+    name: 'dark',
+    background: '#2e3440',
+    primary: '#eceff4',
+    secondary: '#80c0d0',
+    accent: '#5e81ac',
+  },
+  light: {
+    name: 'light',
+    background: '#eceff4',
+    primary: '#2e3440',
+    secondary: '#5e81ac',
+    accent: '#80c0d0',
+  },
+}
+
+const ThemeSwitch = () => {
+  const { theme, setTheme } = useContext(Context)
 
   return (
-    <div className={classNames([className, Wrapper])}>
-      <Moon className={classNames([Icon, darkTheme ? Dark : Light])} />
+    <Wrapper>
+      <Moon />
       <Switch
-        className={classNames([SwitchClass, darkTheme ? Dark : Light])}
-        onChange={() => setDarkTheme(!darkTheme)}
-        checked={!darkTheme}
+        onChange={() =>
+          setTheme(availableThemes[theme.name === 'dark' ? 'light' : 'dark'])
+        }
+        checked={theme.name !== 'dark'}
       />
-      <Sun className={classNames([Icon, darkTheme ? Dark : Light])} />
-    </div>
+      <Sun />
+    </Wrapper>
   )
 }
 
-ThemeSwitch.propTypes = {
-  className: string,
-}
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
 
-ThemeSwitch.defaultProps = {
-  className: '',
-}
+const Moon = styled(MoonIcon)`
+  width: 15px;
+  height: 15px;
+
+  & path {
+    fill: ${props => props.theme.primary};
+  }
+`
+
+const Sun = styled(SunIcon)`
+  width: 15px;
+  height: 15px;
+
+  & path {
+    fill: ${props => props.theme.primary};
+  }
+`
+
+const Switch = styled(SwitchComponent)`
+  background-color: ${props => props.theme.primary};
+  border-color: ${props => props.theme.background};
+
+  &::before {
+    background-color: ${props => props.theme.background};
+    border-color: ${props => props.theme.primary};
+  }
+`
 
 export default ThemeSwitch
