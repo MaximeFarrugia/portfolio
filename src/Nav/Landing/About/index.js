@@ -32,7 +32,7 @@ const About = ({ className }) => {
       <Right>
         <p>
           {t(
-            'Je suis actuellement en fin de 2ème année d’étude à l’école ' +
+            'Je suis actuellement en fin de 3e année d’étude à l’école ' +
               'EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme ' +
               'd’Expert en Informatique.',
           )}

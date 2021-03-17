@@ -13,6 +13,12 @@ const projects = [
     tags: ['C', 'Python', 'Unity', 'IA', 'Game', 'Network'],
   },
   {
+    project: 'AREA',
+    desc: 'Détecter une action sur un service pour réaliser une action sur un autre service.',
+    link: 'https://github.com/MaximeFarrugia/AREA',
+    tags: ['React', 'NodeJS', 'Express', 'MongoDB', 'API', 'WebHooks'],
+  },
+  {
     project: 'Hackaton Jaguar Network',
     desc: 'Trouver des solutions pour la SmartMétropole.',
     link: 'https://community.jaguar-network.com/sprintoneweek-epitech-medinsoft-jaguar-network-3-projets-primes/',

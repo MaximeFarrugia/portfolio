@@ -171,11 +171,11 @@
   },
   {
     "fr": {
-      "singular": "Je suis actuellement en fin de 2ème année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.",
+      "singular": "Je suis actuellement en fin de 3e année d’étude à l’école EPITECH, dans un cursus BAC + 5, afin d’obtenir un diplôme d’Expert en Informatique.",
       "other": ""
     },
     "en": {
-      "singular": "I am currently at the end of the 2nd year of study at EPITECH school, in a BAC + 5 course, in order to obtain a Computer Science degree.",
+      "singular": "I am currently at the end of my 3rd year of study at EPITECH school, in a BAC + 5 course, in order to obtain a Computer Science degree.",
       "other": ""
     }
   },
@@ -336,6 +336,16 @@
     },
     "en": {
       "singular": "Find solutions for the SmartMétropole.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Détecter une action sur un service pour réaliser une action sur un autre service.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Detect an action on a service to perform an action on another service.",
       "other": ""
     }
   }
