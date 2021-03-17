@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { string } from 'prop-types'
 
-import Switch from '../Switch'
+import SwitchComponent from '../Switch'
 import { Context } from '../../../App'
 import { ReactComponent as SunIcon } from './sun.svg'
 import { ReactComponent as MoonIcon } from './moon.svg'
@@ -52,6 +52,10 @@ ThemeSwitch.defaultProps = {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+`
+
+const Switch = styled(SwitchComponent)`
+  margin: 0 10px;
 `
 
 const Moon = styled(MoonIcon)`
