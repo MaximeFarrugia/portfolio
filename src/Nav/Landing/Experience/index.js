@@ -15,7 +15,7 @@ const Experience = ({ className }) => (
       {experiences.map(exp => (
         <ExperienceClass key={exp.company}>
           <Column>
-            <LinkFadingArrow link={exp.link || '#'}>
+            <LinkFadingArrow link={exp.link}>
               {exp.company}
             </LinkFadingArrow>
             <p>{t(exp.job)}</p>

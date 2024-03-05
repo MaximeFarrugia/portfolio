@@ -16,7 +16,31 @@ const experiences = [
       },
     ],
     job: 'Développeur web',
-    link: 'https://transpare.eu',
+  },
+  {
+    company: 'Rofim',
+    dates: [
+      {
+        start: 'Avril',
+        end: 'Juill',
+        yearStart: 2021,
+        yearEnd: 2021,
+      },
+    ],
+    job: 'Développeur fullstack',
+    link: 'https://rofim.fr',
+  },
+  {
+    company: 'smsmode',
+    dates: [
+      {
+        start: 'Mai',
+        end: 'ajd',
+        yearStart: 2022,
+      },
+    ],
+    job: 'Ingénieur logiciel',
+    link: 'https://smsmode.com',
   },
 ]
 

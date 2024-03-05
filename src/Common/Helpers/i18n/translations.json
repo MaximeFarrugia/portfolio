@@ -348,5 +348,65 @@
       "singular": "Detect an action on a service to perform an action on another service.",
       "other": ""
     }
+  },
+  {
+    "fr": {
+      "singular": "Développeur fullstack",
+      "other": ""
+    },
+    "en": {
+      "singular": "Fullstash developer",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Avril",
+      "other": ""
+    },
+    "en": {
+      "singular": "April",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Ingénieur logiciel",
+      "other": ""
+    },
+    "en": {
+      "singular": "Software engineer",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "ajd",
+      "other": ""
+    },
+    "en": {
+      "singular": "now",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Plateforme de télémédecine.",
+      "other": ""
+    },
+    "en": {
+      "singular": "Telemedicine platform.",
+      "other": ""
+    }
+  },
+  {
+    "fr": {
+      "singular": "Plateforme d'envoi de SMS B2C.",
+      "other": ""
+    },
+    "en": {
+      "singular": "B2C SMS sending platform.",
+      "other": ""
+    }
   }
 ]

@@ -5,24 +5,26 @@ import Icon from '@material-ui/core/Icon'
 
 const LinkFadingArrow = ({ className, link, children }) => (
   <Wrapper
+    as={link ? "a" : "span"}
     className={className}
     href={link}
     rel="noopener noreferrer"
     target="_blank"
   >
     {children}
-    <Arrow>arrow_forward</Arrow>
+    {!!link && <Arrow>arrow_forward</Arrow>}
   </Wrapper>
 )
 
 LinkFadingArrow.propTypes = {
   className: string,
-  link: string.isRequired,
+  link: string,
   children: oneOfType([arrayOf(node), node]).isRequired,
 }
 
 LinkFadingArrow.defaultProps = {
   className: '',
+  link: '',
 }
 
 const arrowIn = keyframes`
@@ -69,7 +71,7 @@ const Wrapper = styled.a`
   display: flex;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
+  cursor: ${props => props.href ? "pointer" : "normal"};
 
   &:hover > ${Arrow} {
     opacity: 1;

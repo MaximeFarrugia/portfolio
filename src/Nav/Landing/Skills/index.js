@@ -35,9 +35,16 @@ const Skills = ({ className }) => (
             <td>Chrome DevTools</td>
           </tr>
           <tr>
-            <td>C / C++</td>
+            <td>Rust</td>
             <td>Node</td>
             <td>Postman</td>
+          </tr>
+          <tr>
+            <td>C / C++</td>
+            <td>SpringBoot</td>
+          </tr>
+          <tr>
+            <td>Java</td>
           </tr>
         </tbody>
       </Table>

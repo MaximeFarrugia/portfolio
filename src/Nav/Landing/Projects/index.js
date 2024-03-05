@@ -16,7 +16,7 @@ const Projects = ({ className }) => (
         <ProjectClass key={project.project}>
           <img src={project.image} alt={project.name} />
           <div>
-            <LinkFadingArrow link={project.link || '#'}>
+            <LinkFadingArrow link={project.link}>
               {project.project}
             </LinkFadingArrow>
             <p>{t(project.desc)}</p>
