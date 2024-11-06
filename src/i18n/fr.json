@@ -1,0 +1,69 @@
+{
+  "translation": {
+    "commons": {
+      "months": {
+        "now": "Aujourd'hui",
+        "january": "Janvier",
+        "february": "Février",
+        "march": "Mars",
+        "april": "Avril",
+        "may": "Mai",
+        "june": "Juin",
+        "july": "Juillet",
+        "august": "Août",
+        "september": "Septembre",
+        "october": "Octobre",
+        "november": "Novembre",
+        "december": "Décembre"
+      }
+    },
+    "index": {
+      "header": {
+        "hello": "Bonjour !",
+        "desc": "Je suis <0>Maxime Farrugia</0>, développeur informatique et auto-entrepreneur diplômé de l'école Epitech.",
+        "contact": "Me contacter"
+      },
+      "about": {
+        "title": "À propos de moi",
+        "desc": "Je suis diplômé d'un <0>master en informatique</0> de l'école Epitech.\nPendant ce master, j'ai eu l'opportunité d'étudier 1 an à l'université Laval à Québec.\n\nJ'ai commencé ma carriere professionnelle par du développement web sur du <0>React</0> lors de mon premier stage en entreprise.\nJe me suis par la suite mis à travailler sur la partie <0>backend</0>.\n\nLors de mes stages suivant, j'ai pu découvrir <0>Angular</0> et <0>Java</0>.\n\nMon premier CDI m'a permis de découvrir de nouveaux horizons, tels que le <0>DevOps</0>, la mise en place d'outils de <0>monitoring</0> et de <0>Business Intelligence</0>, et m'a aussi permis de développer des outils internes en <0>Rust</0>.\n\nAujourd'hui, j'aimerais m'axer sur de la <0>programmation logicielle / système</0>.",
+        "resume": "Voir mon CV"
+      },
+      "skills": {
+        "title": "Compétences",
+        "header": {
+          "languages": "Langages",
+          "frameworks": "Frameworks",
+          "tools": "Outils"
+        }
+      },
+      "exp": {
+        "title": "Expérience",
+        "jobs": {
+          "software": "Ingénieur logiciel",
+          "fullstack": "Développeur fullstack",
+          "web": "Développeur web"
+        }
+      },
+      "projects": {
+        "title": "Projets réalisés",
+        "smsmode": "Plateforme d'envoi de SMS B2C.",
+        "rofim": "Plateforme de télémédecine.",
+        "transpare": "Plateforme de mise en relation entre importateurs / exportateurs et transitaires."
+      },
+      "personal_projects": {
+        "title": "Projets personnels",
+        "view_code": "Voir le code",
+        "automated-trading-system": "Système de trading automatisé en temps réel qui place des transactions basées sur des stratégies exécutées sur des données en temps réel provenant de différents courtiers.",
+        "fmp-rs": "Bibliothèque Rust autour de l'API Financial Modeling Prep.",
+        "world_clock": "Affichez plusieurs fuseaux horaires sur une horloge de 24 heures pour sélectionner la meilleure heure de réunion internationale."
+      },
+      "school_projects": {
+        "title": "Projets d'école",
+        "corewar": "Compilateur / arène de combat de champions informatique.",
+        "zappy": "Reproduction d'un jeu de gestion d'un monde vivant et de ses habitants.",
+        "area": "Détecter une action sur un service pour réaliser une action sur un autre service.",
+        "jaguar": "Trouver des solutions pour la SmartMétropole."
+      }
+    }
+  }
+}

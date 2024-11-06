@@ -1,0 +1,69 @@
+{
+  "translation": {
+    "commons": {
+      "months": {
+        "now": "Today",
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      }
+    },
+    "index": {
+      "header": {
+        "hello": "Hello!",
+        "desc": "I am <0>Maxime Farrugia</0>, a computer developer and self-employed graduate of Epitech school.",
+        "contact": "Contact me"
+      },
+      "about": {
+        "title": "About me",
+        "desc": "I graduated with a <0>master’s in computer science</0> from Epitech school.\nDuring this master’s program, I had the opportunity to study for a year at Laval University in Quebec.\n\nI began my professional career in web development with <0>React</0> during my first internship.\nAfter that, I moved into <0>backend</0> work.\n\nIn subsequent internships, I explored <0>Angular</0> and <0>Java</0>.\n\nMy first full-time position allowed me to discover new fields such as <0>DevOps</0>, implementing <0>monitoring</0> tools, and <0>Business Intelligence</0>, and also gave me the chance to develop internal tools in <0>Rust</0>.\n\nToday, I would like to focus on <0>software/system programming</0>.",
+        "resume": "See my resume"
+      },
+      "skills": {
+        "title": "Skills",
+        "header": {
+          "languages": "Languages",
+          "frameworks": "Frameworks",
+          "tools": "Tools"
+        }
+      },
+      "exp": {
+        "title": "Experience",
+        "jobs": {
+          "software": "Software Engineer",
+          "fullstack": "Fullstack Developer",
+          "web": "Web Developer"
+        }
+      },
+      "projects": {
+        "title": "Completed Projects",
+        "smsmode": "B2C SMS sending platform.",
+        "rofim": "Telemedicine platform.",
+        "transpare": "Platform connecting importers/exporters with freight forwarders."
+      },
+      "personal_projects": {
+        "title": "Personal Projects",
+        "view_code": "View code",
+        "automated-trading-system": "Real-Time automated trading system that places trades based on strategies running on live data from different brokers.",
+        "fmp-rs": "Rust library wrapper around the Financial Modeling Prep API.",
+        "world_clock": "Display multiple timezones on a 24h clock to select best international meeting time."
+      },
+      "school_projects": {
+        "title": "School Projects",
+        "corewar": "Compiler / battle arena for computer champions.",
+        "zappy": "Recreation of a management game for a living world and its inhabitants.",
+        "area": "Detect an action on one service to trigger an action on another service.",
+        "jaguar": "Find solutions for SmartMetropolis."
+      }
+    }
+  }
+}
