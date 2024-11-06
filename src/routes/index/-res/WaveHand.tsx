@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react'
+import { SVGProps } from 'react'
 
 const WaveHand = (props: SVGProps<SVGSVGElement>) => {
   return (

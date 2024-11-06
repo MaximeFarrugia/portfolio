@@ -16,19 +16,19 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
       - run: npm install
       - name: Build
         run: |
           npm run-script build
-          tar zcvf build.tar.gz build
+          tar zcvf dist.tar.gz dist
       - name: Upload
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: 'build.tar.gz'
+          source: 'dist.tar.gz'
           target: '/var/www/portfolio'
       - name: Update files
         uses: appleboy/ssh-action@master
@@ -39,6 +39,6 @@ jobs:
           script: |
             cd /var/www/portfolio
             rm -rf html
-            tar zxvf build.tar.gz
-            mv build html
-            rm -rf build.tar.gz
+            tar zxvf dist.tar.gz
+            mv dist html
+            rm -rf dist.tar.gz
