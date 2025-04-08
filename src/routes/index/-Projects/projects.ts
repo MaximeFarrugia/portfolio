@@ -8,6 +8,12 @@ interface Project {
 
 const projects: Project[] = [
   {
+    project: "Drop'in",
+    desc: 'index.projects.dropin',
+    image: '/res/projects/dropin.png',
+    link: 'https://dropin.recipes',
+  },
+  {
     project: 'smsmode',
     desc: 'index.projects.smsmode',
     image: '/res/projects/smsmode.png',

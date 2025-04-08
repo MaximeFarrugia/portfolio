@@ -1,12 +1,25 @@
 const experiences = [
   {
+    company: 'Blue Forest',
+    dates: [
+      {
+        start: 'commons.months.january',
+        end: 'commons.months.april',
+        yearStart: 2025,
+        yearEnd: 2025,
+      },
+    ],
+    job: 'index.exp.jobs.software',
+    link: 'https://dropin.recipes/',
+  },
+  {
     company: 'smsmode',
     dates: [
       {
         start: 'commons.months.may',
-        end: 'commons.months.now',
+        end: 'commons.months.november',
         yearStart: 2022,
-        yearEnd: undefined,
+        yearEnd: 2024,
       },
     ],
     job: 'index.exp.jobs.software',
